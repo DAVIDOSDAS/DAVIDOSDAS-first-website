@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=SCHOOL AI Assistant
+Comment=Launch MASSUM School AI Chat
+Exec=bash -c "cd '/home/davidosdas/Documents/MASSUM/Main Folder/AI_School_Assistant' && source .venv/bin/activate && python3 backend.py"
+Path=/home/davidosdas/Documents/MASSUM/Main Folder/AI_School_Assistant
+Icon=/home/davidosdas/Documents/MASSUM/Main Folder/AI_School_Assistant/logooo.png
+Terminal=false          # change to true if you want to see output
+Categories=Education;Utility;Development;
+StartupNotify=true

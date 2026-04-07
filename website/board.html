@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Огласна табла на СОУ Св. Кирил и Методиј – коментари, вести и фотографии од заедницата.">
+  <title>Заедница | СОУ Св. Кирил и Методиј</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/main.css">
+  <style>
+    .board-toolbar {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 2.5rem; gap: 1rem; flex-wrap: wrap;
+    }
+    .board-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .filter-btn {
+      padding: 0.4rem 1rem; border-radius: var(--radius-pill);
+      border: 1px solid var(--border); background: white;
+      font-family: inherit; font-size: 0.85rem; font-weight: 500;
+      color: var(--text-muted); cursor: pointer;
+      transition: all var(--dur-fast);
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--navy); color: white; border-color: var(--navy);
+    }
+    .board-feed { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.8rem; }
+
+    /* Comment post card — different from news/photo */
+    .post-card {
+      background: var(--bg-white); border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg); padding: 1.6rem;
+      box-shadow: var(--shadow-xs); display: flex; flex-direction: column; gap: 1rem;
+      transition: transform var(--dur-mid) var(--ease-out), box-shadow var(--dur-mid);
+    }
+    .post-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .post-meta { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+    .post-author { font-size: 0.88rem; font-weight: 600; color: var(--navy); }
+    .post-time { font-size: 0.78rem; color: var(--text-faint); margin-left: auto; }
+    .post-text { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; }
+    .type-badge {
+      display: inline-block; font-size: 0.72rem; font-weight: 700;
+      padding: 0.2rem 0.65rem; border-radius: var(--radius-pill); letter-spacing: 0.04em;
+    }
+    .type-comment { background: rgba(42,181,160,0.1); color: var(--teal-dark); border: 1px solid rgba(42,181,160,0.2); }
+    .type-news    { background: rgba(15,30,60,0.07); color: var(--navy); border: 1px solid rgba(15,30,60,0.12); }
+    .type-photo   { background: rgba(240,90,40,0.08); color: var(--accent-dark); border: 1px solid rgba(240,90,40,0.15); }
+
+    /* Login/post modal */
+    .overlay { display: none; position: fixed; inset: 0; background: rgba(10,20,50,0.45); z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
+    .overlay.open { display: flex; }
+    .modal {
+      background: white; border-radius: var(--radius-xl); padding: 2rem;
+      width: 90%; max-width: 440px; box-shadow: var(--shadow-lg);
+      animation: modalIn 0.2s var(--ease-out);
+    }
+    @keyframes modalIn { from { transform: translateY(16px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .modal h2 { font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 1.4rem; }
+    .modal-field { display: flex; flex-direction: column; gap: 5px; margin-bottom: 1rem; }
+    .modal-field label { font-size: 0.78rem; font-weight: 600; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.06em; }
+    .modal-field input, .modal-field textarea {
+      border: 1px solid var(--border); border-radius: var(--radius-md);
+      padding: 0.7rem 0.9rem; font-size: 0.95rem; font-family: inherit;
+      color: var(--navy); outline: none; transition: border-color var(--dur-fast);
+    }
+    .modal-field input:focus, .modal-field textarea:focus { border-color: var(--accent); }
+    .modal-field textarea { min-height: 90px; resize: vertical; }
+    .modal-actions { display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 1.4rem; }
+    .btn-cancel {
+      padding: 0.65rem 1.4rem; border-radius: var(--radius-pill);
+      border: 1px solid var(--border); background: white;
+      font-family: inherit; font-size: 0.9rem; font-weight: 600;
+      color: var(--text-muted); cursor: pointer;
+    }
+    .modal-error { font-size: 0.82rem; color: #dc2626; background: #fef2f2; border: 1px solid #fecaca; border-radius: var(--radius-sm); padding: 0.6rem 0.8rem; margin-bottom: 0.75rem; display: none; }
+
+    /* Post type tabs */
+    .type-tabs { display: flex; gap: 0.5rem; margin-bottom: 1.2rem; flex-wrap: wrap; }
+    .type-tab {
+      padding: 0.4rem 1rem; border-radius: var(--radius-pill);
+      border: 1px solid var(--border); background: white;
+      font-family: inherit; font-size: 0.85rem; font-weight: 500;
+      color: var(--text-muted); cursor: pointer; transition: all var(--dur-fast);
+    }
+    .type-tab.active { background: var(--navy); color: white; border-color: var(--navy); }
+    .type-tab:disabled { opacity: 0.4; cursor: not-allowed; }
+    .role-note { font-size: 0.8rem; color: var(--teal-dark); background: rgba(42,181,160,0.08); border: 1px solid rgba(42,181,160,0.2); border-radius: var(--radius-sm); padding: 0.5rem 0.8rem; margin-bottom: 1rem; display: none; }
+
+    .user-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--bg-section); border: 1px solid var(--border-light);
+      border-radius: var(--radius-pill); padding: 0.35rem 0.9rem;
+      font-size: 0.82rem; font-weight: 500; color: var(--navy);
+    }
+    .user-pill .dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; }
+
+    .empty-state { text-align: center; padding: 4rem 2rem; color: var(--text-faint); font-size: 0.95rem; grid-column: 1 / -1; }
+    .empty-state .icon { font-size: 2.5rem; margin-bottom: 1rem; }
+
+    .dev-credit {
+      text-align: center;
+      padding: 1rem 0 0.5rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.35);
+    }
+    .dev-credit a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .dev-credit a:hover { color: white; }
+  </style>
+</head>
+<body>
+
+  <div class="page-transition-shutter"></div>
+
+  <header class="navbar">
+    <div class="container navbar-container">
+      <div class="logo">
+        <a href="index.html" class="logo-link">
+          <img src="static/images/logo.jpg" alt="Лого" width="50" height="50" loading="lazy">
+          <span>СОУ Св. Кирил и Методиј</span>
+        </a>
+      </div>
+      <button class="hamburger" type="button" aria-label="Отвори/затвори мени" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-menu" id="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Почетна</a></li>
+          <li><a href="about.html">За нас</a></li>
+          <li><a href="directions.html">Смерови</a></li>
+          <li><a href="admissions.html">Прием</a></li>
+          <li><a href="news.html">Новости</a></li>
+          <li><a href="board.html" class="active">Заедница</a></li>
+          <li><a href="contact.html">Контакт</a></li>
+          <li><a href="admissions.html#application" class="btn-apply">Аплицирај</a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch">
+        <a href="board.html" aria-current="true">МК</a>
+        <a href="../website_english/board_en.html">EN</a>
+        <a href="../website_french/board_fr.html">FR</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-content fade-in visible">
+          <h1>Заедница</h1>
+          <p class="lead">Вести, фотографии и коментари од нашата училишна заедница.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-section);">
+      <div class="container">
+
+        <div class="board-toolbar">
+          <div class="board-filters">
+            <button class="filter-btn active" onclick="filterPosts('all', this)">Сите</button>
+            <button class="filter-btn" onclick="filterPosts('news', this)">Вести</button>
+            <button class="filter-btn" onclick="filterPosts('photo', this)">Фотографии</button>
+            <button class="filter-btn" onclick="filterPosts('comment', this)">Коментари</button>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <span id="user-pill-area"></span>
+            <button class="btn-primary" onclick="openPostModal()" style="padding:0.6rem 1.4rem; font-size:0.9rem;">
+              + Објави
+            </button>
+            <button id="auth-btn" class="btn-load-more" onclick="openLoginModal()" style="padding:0.6rem 1.2rem; font-size:0.88rem;">
+              Најави се
+            </button>
+          </div>
+        </div>
+
+        <div class="board-feed" id="board-feed">
+          <div class="empty-state">
+            <div class="icon">📋</div>
+            <p>Вчитување...</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Login Modal -->
+  <div class="overlay" id="login-overlay">
+    <div class="modal">
+      <h2>Најави се</h2>
+      <div class="modal-error" id="login-err">Погрешни податоци.</div>
+      <div class="modal-field"><label>Е-пошта</label><input type="email" id="login-email" placeholder="you@example.com"></div>
+      <div class="modal-field"><label>Лозинка</label><input type="password" id="login-pass" placeholder="••••••••"></div>
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal('login-overlay')">Откажи</button>
+        <button class="btn-primary" onclick="doLogin()" style="padding:0.65rem 1.6rem;">Влез</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Post Modal -->
+  <div class="overlay" id="post-overlay">
+    <div class="modal">
+      <h2>Нова објава</h2>
+      <div class="type-tabs" id="type-tabs">
+        <button class="type-tab active" onclick="setType('comment',this)">Коментар</button>
+        <button class="type-tab" id="tab-news" onclick="setType('news',this)">Вест</button>
+        <button class="type-tab" id="tab-photo" onclick="setType('photo',this)">Фотографија</button>
+      </div>
+      <p class="role-note" id="role-note">Само работници можат да објавуваат вести и фотографии.</p>
+      <div class="modal-field">
+        <label>Порака</label>
+        <textarea id="post-text" placeholder="Напиши нешто..."></textarea>
+      </div>
+      <div class="modal-field" id="img-field" style="display:none;">
+        <label>URL на слика</label>
+        <input type="text" id="post-img" placeholder="https://...">
+      </div>
+      <div class="modal-error" id="post-err"></div>
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal('post-overlay')">Откажи</button>
+        <button class="btn-primary" onclick="submitPost()" style="padding:0.65rem 1.6rem;">Објави</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <div class="footer-logo" style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;">
+          <img src="static/images/logo.jpg" alt="" width="36" height="36" style="border-radius:6px;">
+          <span style="font-size:0.95rem; font-weight:600; color:white;">СОУ Св. Кирил и Методиј</span>
+        </div>
+        <address style="font-style:normal; font-size:0.88rem; color:rgba(255,255,255,0.6); line-height:1.75;">
+          ул. „Индустриска" б.б.<br>1440 Неготино, Северна Македонија
+        </address>
+        <p style="margin-top:0.5rem; font-size:0.88rem;">Тел: +389 (0)43 361-079</p>
+      </div>
+      <div class="footer-column">
+        <h3>Брзи врски</h3>
+        <ul>
+          <li><a href="about.html">За нас</a></li>
+          <li><a href="directions.html">Смерови</a></li>
+          <li><a href="news.html">Новости</a></li>
+          <li><a href="admissions.html">Прием</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Информации</h3>
+        <ul>
+          <li><a href="upis-konkurs.html">Конкурс за упис</a></li>
+          <li><a href="gallery.html">Галерија</a></li>
+          <li><a href="contact.html">Контакт</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2026 СОУ Св. Кирил и Методиј, Неготино. Сите права задржани.</p>
+    </div>
+    <div class="dev-credit">
+      Built with ❤️ by
+      <a href="https://www.instagram.com/davidosdas?igsh=eXR6am10MnJ0bDI1" target="_blank" rel="noopener noreferrer">@DAVIDOSDAS</a>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Назад на врв">↑</button>
+
+  <!-- AI Float Button -->
+  <div id="ai-float-btn" class="ai-float-btn breathing" title="DAVIDOSDAS AI">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2a8 8 0 0 1 8 8c0 5-8 12-8 12S4 15 4 10a8 8 0 0 1 8-8z"/>
+      <circle cx="12" cy="10" r="2.5" fill="white" stroke="none"/>
+    </svg>
+  </div>
+
+  <!-- AI Popup -->
+  <div id="ai-popup">
+    <div class="chat-header">
+      <div class="header-left">
+        <div class="status-dot"></div>
+        <span class="header-title">DAVIDOSDAS AI</span>
+      </div>
+      <button id="close-ai">✕</button>
+    </div>
+    <div id="answer-output">
+      <div class="ai-message welcome-msg">Системот е активен. Како можам да помогнам? 👋</div>
+    </div>
+    <div class="input-area">
+      <input id="question-input" type="text" placeholder="Прашај нешто за MASSUM..." autocomplete="off">
+      <button id="ask-button">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="static/js/script.js"></script>
+  <script src="static/js/ai_script.js"></script>
+  <script>
+    const API = "http://localhost:3000";
+    let token = localStorage.getItem("token");
+    let currentUser = JSON.parse(localStorage.getItem("user") || "null");
+    let postType = "comment";
+    let allPosts = [];
+    let activeFilter = "all";
+
+    function updateAuthUI() {
+      const pillArea = document.getElementById("user-pill-area");
+      const authBtn = document.getElementById("auth-btn");
+      if (currentUser) {
+        pillArea.innerHTML = `<span class="user-pill"><span class="dot"></span>${currentUser.name} <span style="color:var(--text-faint);font-weight:400;">(${currentUser.role})</span></span>`;
+        authBtn.textContent = "Одјави се";
+        authBtn.onclick = logout;
+      } else {
+        pillArea.innerHTML = "";
+        authBtn.textContent = "Најави се";
+        authBtn.onclick = openLoginModal;
+      }
+    }
+
+    async function loadPosts() {
+      try {
+        const res = await fetch(API + "/posts");
+        allPosts = await res.json();
+        renderPosts();
+      } catch (e) {
+        document.getElementById("board-feed").innerHTML = '<div class="empty-state"><div class="icon">⚠️</div><p>Не може да се поврзе со серверот.</p></div>';
+      }
+    }
+
+    function renderPosts() {
+      const feed = document.getElementById("board-feed");
+      const filtered = activeFilter === "all" ? allPosts : allPosts.filter(p => p.type === activeFilter);
+      if (!filtered.length) {
+        feed.innerHTML = '<div class="empty-state"><div class="icon">📭</div><p>Нема објави.</p></div>';
+        return;
+      }
+      feed.innerHTML = filtered.map(p => {
+        const date = new Date(p.created_at).toLocaleDateString("mk-MK", { day:"numeric", month:"long", year:"numeric" });
+        if (p.type === "photo" && p.image_url) {
+          return `
+            <a href="post.html?id=${p.id}" class="photo-card fade-in" style="text-decoration:none;">
+              <img src="${p.image_url}" alt="${p.text}" loading="lazy">
+              <div class="photo-overlay">
+                <span class="type-badge type-photo" style="margin-bottom:0.5rem;">Фотографија</span>
+                <h3 style="color:white; margin:0 0 0.25rem; font-size:1rem;">${p.text}</h3>
+                <p style="color:rgba(255,255,255,0.75); font-size:0.8rem; margin:0;">${p.author_name || "Непознат"} · ${date}</p>
+              </div>
+            </a>`;
+        }
+        if (p.type === "news") {
+          return `
+            <article class="news-card fade-in">
+              ${p.image_url ? `<div class="news-image" style="background-image:url('${p.image_url}');"></div>` : ""}
+              <div class="news-content">
+                <div class="news-meta">
+                  <time>${date}</time>
+                  <span class="category-badge">Вест</span>
+                </div>
+                <h3>${p.text}</h3>
+                <p style="font-size:0.82rem; color:var(--text-faint); margin:0 0 1rem;">Објавено од ${p.author_name || "Непознат"}</p>
+                <a href="post.html?id=${p.id}" class="read-more">Прочитај повеќе →</a>
+              </div>
+            </article>`;
+        }
+        return `
+          <div class="post-card fade-in">
+            <div class="post-meta">
+              <span class="type-badge type-comment">Коментар</span>
+              <span class="post-author">${p.author_name || "Непознат"}</span>
+              <span class="post-time">${date}</span>
+            </div>
+            <p class="post-text">${p.text}</p>
+            <a href="post.html?id=${p.id}" style="font-size:0.82rem; color:var(--accent); font-weight:600; text-decoration:none; margin-top:0.25rem; display:inline-block;">Погледни →</a>
+          </div>`;
+      }).join("");
+
+      document.querySelectorAll(".fade-in").forEach(el => el.classList.add("visible"));
+    }
+
+    function filterPosts(type, btn) {
+      activeFilter = type;
+      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderPosts();
+    }
+
+    function openLoginModal() {
+      document.getElementById("login-err").style.display = "none";
+      document.getElementById("login-email").value = "";
+      document.getElementById("login-pass").value = "";
+      document.getElementById("login-overlay").classList.add("open");
+    }
+
+    function openPostModal() {
+      if (!currentUser) { openLoginModal(); return; }
+      document.getElementById("post-text").value = "";
+      document.getElementById("post-img").value = "";
+      document.getElementById("post-err").style.display = "none";
+      setType("comment", document.querySelector(".type-tab"));
+      document.getElementById("post-overlay").classList.add("open");
+    }
+
+    function closeModal(id) { document.getElementById(id).classList.remove("open"); }
+
+    function setType(t, el) {
+      postType = t;
+      document.querySelectorAll(".type-tab").forEach(b => b.classList.remove("active"));
+      el.classList.add("active");
+      document.getElementById("img-field").style.display = t === "photo" ? "flex" : "none";
+      const canPost = currentUser && (currentUser.role === "worker" || currentUser.role === "admin");
+      const note = document.getElementById("role-note");
+      note.style.display = (t !== "comment" && !canPost) ? "block" : "none";
+    }
+
+    async function doLogin() {
+      const email = document.getElementById("login-email").value;
+      const password = document.getElementById("login-pass").value;
+      const err = document.getElementById("login-err");
+      try {
+        const res = await fetch(API + "/auth/login", {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password })
+        });
+        const data = await res.json();
+        if (!res.ok) { err.style.display = "block"; return; }
+        token = data.token; currentUser = data.user;
+        localStorage.setItem("token", token);
+        localStorage.setItem("user", JSON.stringify(currentUser));
+        closeModal("login-overlay");
+        updateAuthUI();
+      } catch(e) { err.style.display = "block"; }
+    }
+
+    function logout() {
+      token = null; currentUser = null;
+      localStorage.removeItem("token"); localStorage.removeItem("user");
+      updateAuthUI();
+    }
+
+    async function submitPost() {
+      const text = document.getElementById("post-text").value.trim();
+      const image_url = document.getElementById("post-img").value.trim();
+      const errEl = document.getElementById("post-err");
+      if (!text) return;
+      try {
+        const res = await fetch(API + "/posts", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Authorization: "Bearer " + token },
+          body: JSON.stringify({ type: postType, text, image_url })
+        });
+        const data = await res.json();
+        if (!res.ok) { errEl.textContent = data.error; errEl.style.display = "block"; return; }
+        closeModal("post-overlay");
+        loadPosts();
+      } catch(e) { errEl.textContent = "Грешка при поврзување."; errEl.style.display = "block"; }
+    }
+
+    // Close overlay on background click
+    document.querySelectorAll(".overlay").forEach(ov => {
+      ov.addEventListener("click", e => { if (e.target === ov) ov.classList.remove("open"); });
+    });
+
+    updateAuthUI();
+    loadPosts();
+  </script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Објава | СОУ Св. Кирил и Методиј</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/main.css">
+  <style>
+    .post-hero-img {
+      width: 100%; max-height: 480px; object-fit: cover;
+      border-radius: var(--radius-xl); margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-lg);
+    }
+    .post-body {
+      max-width: 740px; margin: 0 auto;
+      background: white; border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl); padding: 3rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .post-type-label {
+      display: inline-block; font-size: 0.75rem; font-weight: 700;
+      padding: 0.25rem 0.8rem; border-radius: var(--radius-pill);
+      letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1.2rem;
+    }
+    .type-comment { background: rgba(42,181,160,0.1); color: var(--teal-dark); border: 1px solid rgba(42,181,160,0.2); }
+    .type-news    { background: rgba(15,30,60,0.07); color: var(--navy); border: 1px solid rgba(15,30,60,0.12); }
+    .type-photo   { background: rgba(240,90,40,0.08); color: var(--accent-dark); border: 1px solid rgba(240,90,40,0.15); }
+    .post-title { font-size: clamp(1.6rem, 4vw, 2.4rem); color: var(--navy); font-weight: 800; line-height: 1.25; margin-bottom: 1rem; }
+    .post-meta-bar {
+      display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+      padding: 1rem 0; border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light); margin-bottom: 2rem;
+    }
+    .post-meta-bar .author { font-size: 0.88rem; font-weight: 600; color: var(--navy); }
+    .post-meta-bar .date   { font-size: 0.82rem; color: var(--text-faint); }
+    .post-content { font-size: 1.05rem; color: var(--text-muted); line-height: 1.85; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.88rem; font-weight: 600; color: var(--text-muted);
+      text-decoration: none; margin-bottom: 2rem;
+      transition: color var(--dur-fast);
+    }
+    .back-link:hover { color: var(--accent); }
+    .photo-fullview {
+      max-width: 900px; margin: 0 auto 2rem;
+      border-radius: var(--radius-xl); overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .photo-fullview img { width: 100%; display: block; }
+    .delete-btn {
+      margin-top: 2rem; padding: 0.6rem 1.4rem;
+      border-radius: var(--radius-pill); border: 1px solid #fecaca;
+      background: #fef2f2; color: #dc2626; font-family: inherit;
+      font-size: 0.88rem; font-weight: 600; cursor: pointer;
+      transition: all var(--dur-fast);
+    }
+    .delete-btn:hover { background: #dc2626; color: white; border-color: #dc2626; }
+    .loading-state { text-align: center; padding: 6rem 2rem; color: var(--text-faint); }
+    .dev-credit { text-align:center; padding:1rem 0 0.5rem; font-size:0.82rem; color:rgba(255,255,255,0.35); }
+    .dev-credit a { color:rgba(255,255,255,0.55); text-decoration:none; }
+    .dev-credit a:hover { color:white; }
+  </style>
+</head>
+<body>
+
+  <div class="page-transition-shutter"></div>
+
+  <header class="navbar">
+    <div class="container navbar-container">
+      <div class="logo">
+        <a href="index.html" class="logo-link">
+          <img src="static/images/logo.jpg" alt="Лого" width="50" height="50" loading="lazy">
+          <span>СОУ Св. Кирил и Методиј</span>
+        </a>
+      </div>
+      <button class="hamburger" type="button" aria-label="Отвори/затвори мени" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-menu" id="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Почетна</a></li>
+          <li><a href="about.html">За нас</a></li>
+          <li><a href="directions.html">Смерови</a></li>
+          <li><a href="admissions.html">Прием</a></li>
+          <li><a href="board.html" class="active">Заедница</a></li>
+          <li><a href="contact.html">Контакт</a></li>
+          <li><a href="admissions.html#application" class="btn-apply">Аплицирај</a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch">
+        <a href="#" aria-current="true">МК</a>
+        <a href="../website_english/">EN</a>
+        <a href="../website_french/">FR</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="background: var(--bg-section); min-height: 70vh;">
+      <div class="container">
+        <a href="board.html" class="back-link">← Назад кон заедница</a>
+        <div id="post-container">
+          <div class="loading-state">Вчитување...</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;">
+          <img src="static/images/logo.jpg" alt="" width="36" height="36" style="border-radius:6px;">
+          <span style="font-size:0.95rem; font-weight:600; color:white;">СОУ Св. Кирил и Методиј</span>
+        </div>
+        <address style="font-style:normal; font-size:0.88rem; color:rgba(255,255,255,0.6); line-height:1.75;">
+          ул. „Индустриска" б.б.<br>1440 Неготино, Северна Македонија
+        </address>
+        <p style="margin-top:0.5rem; font-size:0.88rem;">Тел: +389 (0)43 361-079</p>
+      </div>
+      <div class="footer-column">
+        <h3>Брзи врски</h3>
+        <ul>
+          <li><a href="about.html">За нас</a></li>
+          <li><a href="directions.html">Смерови</a></li>
+          <li><a href="board.html">Заедница</a></li>
+          <li><a href="admissions.html">Прием</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Информации</h3>
+        <ul>
+          <li><a href="upis-konkurs.html">Конкурс за упис</a></li>
+          <li><a href="gallery.html">Галерија</a></li>
+          <li><a href="contact.html">Контакт</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright"><p>© 2026 СОУ Св. Кирил и Методиј, Неготино. Сите права задржани.</p></div>
+    <div class="dev-credit">
+      Built with ❤️ by
+      <a href="https://www.instagram.com/davidosdas?igsh=eXR6am10MnJ0bDI1" target="_blank" rel="noopener noreferrer">@DAVIDOSDAS</a>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Назад на врв">↑</button>
+
+  <!-- AI Float Button -->
+  <div id="ai-float-btn" class="ai-float-btn breathing" title="DAVIDOSDAS AI">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2a8 8 0 0 1 8 8c0 5-8 12-8 12S4 15 4 10a8 8 0 0 1 8-8z"/>
+      <circle cx="12" cy="10" r="2.5" fill="white" stroke="none"/>
+    </svg>
+  </div>
+  <div id="ai-popup">
+    <div class="chat-header">
+      <div class="header-left">
+        <div class="status-dot"></div>
+        <span class="header-title">DAVIDOSDAS AI</span>
+      </div>
+      <button id="close-ai">✕</button>
+    </div>
+    <div id="answer-output">
+      <div class="ai-message welcome-msg">Системот е активен. Како можам да помогнам? 👋</div>
+    </div>
+    <div class="input-area">
+      <input id="question-input" type="text" placeholder="Прашај нешто за MASSUM..." autocomplete="off">
+      <button id="ask-button">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="static/js/script.js"></script>
+  <script src="static/js/ai_script.js"></script>
+  <script>
+    const API = "http://localhost:3000";
+    const currentUser = JSON.parse(localStorage.getItem("user") || "null");
+    const token = localStorage.getItem("token");
+
+    async function loadPost() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+      const container = document.getElementById("post-container");
+
+      if (!id) {
+        container.innerHTML = '<div class="loading-state">Нема избрана објава. <a href="board.html">Назад кон заедница</a></div>';
+        return;
+      }
+
+      try {
+        const res = await fetch(API + "/posts/" + id);
+        if (!res.ok) throw new Error("Not found");
+        const p = await res.json();
+
+        document.title = p.text.substring(0, 60) + " | СОУ Св. Кирил и Методиј";
+
+        const date = new Date(p.created_at).toLocaleDateString("mk-MK", {
+          day: "numeric", month: "long", year: "numeric"
+        });
+
+        const canDelete = currentUser && (currentUser.role === "admin" || currentUser.id === p.author_id);
+
+        if (p.type === "photo") {
+          container.innerHTML = `
+            <div class="photo-fullview">
+              <img src="${p.image_url}" alt="${p.text}">
+            </div>
+            <div class="post-body">
+              <span class="post-type-label type-photo">Фотографија</span>
+              <h1 class="post-title">${p.text}</h1>
+              <div class="post-meta-bar">
+                <span class="author">📷 ${p.author_name || "Непознат"}</span>
+                <span class="date">${date}</span>
+              </div>
+              ${canDelete ? `<button class="delete-btn" onclick="deletePost(${p.id})">🗑 Избриши објава</button>` : ""}
+            </div>`;
+        } else if (p.type === "news") {
+          container.innerHTML = `
+            ${p.image_url ? `<img class="post-hero-img" src="${p.image_url}" alt="${p.text}">` : ""}
+            <div class="post-body">
+              <span class="post-type-label type-news">Вест</span>
+              <h1 class="post-title">${p.text}</h1>
+              <div class="post-meta-bar">
+                <span class="author">✍️ ${p.author_name || "Непознат"}</span>
+                <span class="date">${date}</span>
+              </div>
+              <div class="post-content">
+                <p>${p.text}</p>
+              </div>
+              ${canDelete ? `<button class="delete-btn" onclick="deletePost(${p.id})">🗑 Избриши објава</button>` : ""}
+            </div>`;
+        } else {
+          container.innerHTML = `
+            <div class="post-body">
+              <span class="post-type-label type-comment">Коментар</span>
+              <div class="post-meta-bar">
+                <span class="author">💬 ${p.author_name || "Непознат"}</span>
+                <span class="date">${date}</span>
+              </div>
+              <div class="post-content">
+                <p>${p.text}</p>
+              </div>
+              ${canDelete ? `<button class="delete-btn" onclick="deletePost(${p.id})">🗑 Избриши објава</button>` : ""}
+            </div>`;
+        }
+      } catch (e) {
+        container.innerHTML = '<div class="loading-state">Објавата не е пронајдена. <a href="board.html">Назад кон заедница</a></div>';
+      }
+    }
+
+    async function deletePost(id) {
+      if (!confirm("Сигурно сакаш да ја избришеш оваа објава?")) return;
+      try {
+        const res = await fetch(API + "/posts/" + id, {
+          method: "DELETE",
+          headers: { Authorization: "Bearer " + token }
+        });
+        if (res.ok) window.location.href = "board.html";
+      } catch (e) {
+        alert("Грешка при бришење.");
+      }
+    }
+
+    loadPost();
+  </script>
+</body>
+</html>

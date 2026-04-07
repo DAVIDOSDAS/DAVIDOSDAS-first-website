@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Архива на сите вести од СОУ Св. Кирил и Методиј – Неготино.">
+  <title>Архива на вести | СОУ Св. Кирил и Методиј</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/main.css">
+  <style>
+    .news-archive { padding: 4rem 0 8rem; }
+    .filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem; }
+    .filter-select {
+      padding: 0.7rem 1.2rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px; color: white; font-family: inherit; font-size: 0.95rem; cursor: pointer;
+    }
+    .filter-select option { background: #0f172a; }
+    .pagination-wrapper { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 4rem; }
+    .page-info { color: #94a3b8; font-weight: 500; padding: 0 1rem; }
+    .btn-page { padding: 0.8rem 1.8rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s; }
+    .btn-page-primary { background: #3b82f6; color: white; }
+    .btn-page-secondary { border: 2px solid #3b82f6; color: #3b82f6; }
+    .btn-page-primary:hover { background: #2563eb; }
+    .btn-page-secondary:hover { background: #3b82f6; color: white; }
+  </style>
+</head>
+<body>
+
+  <div class="page-transition-shutter"></div>
+
+  <header class="navbar">
+    <div class="container navbar-container">
+      <div class="logo">
+        <a href="index.html" class="logo-link">
+          <img src="static/images/logo.jpg" alt="" width="50" height="50" loading="lazy">
+          <span>СОУ Св. Кирил и Методиј</span>
+        </a>
+      </div>
+      <button class="hamburger" type="button" aria-label="Отвори/затвори мени" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-menu" id="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Почетна</a></li>
+          <li><a href="about.html">За нас</a></li>
+          <li><a href="directions.html">Смерови</a></li>
+          <li><a href="admissions.html">Прием</a></li>
+          <li><a href="news.html" class="active">Новости</a></li>
+          <li><a href="contact.html">Контакт</a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch">
+        <a href="list.html" aria-current="true">МК</a>
+        <a href="../website_english/list_en.html">EN</a>
+        <a href="../website_french/list_fr.html">FR</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-content fade-in visible">
+          <h1>Архива на вести</h1>
+          <p class="lead">Сите објавени вести, соопштенија, успеси и настани од нашето училиште</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="news-archive bg-fade">
+      <div class="container">
+
+        <div class="filters fade-in">
+          <select class="filter-select" id="filter-category" onchange="filterNews()">
+            <option value="">Сите категории</option>
+            <option value="nastani">Настани</option>
+            <option value="nagradi">Награди</option>
+            <option value="proekti">Проекти</option>
+            <option value="uspexi">Успеси</option>
+            <option value="zapishuvanje">Запишување</option>
+          </select>
+          <select class="filter-select" id="filter-year" onchange="filterNews()">
+            <option value="">Сите години</option>
+            <option value="2026">2025/2026</option>
+            <option value="2025">2024/2025</option>
+            <option value="2024">2023/2024</option>
+          </select>
+        </div>
+
+        <div class="news-grid grid" id="news-container" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem;">
+
+          <article class="news-card glass-card fade-in" data-category="nastani" data-year="2026" style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:20px; overflow:hidden;">
+            <div style="height:180px; background:url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600') center/cover;"></div>
+            <div style="padding:1.5rem;">
+              <div style="display:flex; gap:0.8rem; align-items:center; margin-bottom:0.8rem;">
+                <time style="color:#94a3b8; font-size:0.85rem;">5 март 2026</time>
+                <span style="background:rgba(59,130,246,0.15); color:#3b82f6; padding:0.2rem 0.7rem; border-radius:50px; font-size:0.8rem; font-weight:600;">Настани</span>
+              </div>
+              <h3 style="font-size:1.1rem; margin-bottom:0.7rem; color:#f0f4ff;"><a href="detail.html" style="text-decoration:none; color:inherit;">Отворање на лабораторијата за роботика</a></h3>
+              <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:1rem; line-height:1.6;">Нова лабораторија опремена со 3D принтери и роботски комплети.</p>
+              <a href="detail.html" style="color:#3b82f6; text-decoration:none; font-weight:600; font-size:0.9rem;">Прочитај повеќе →</a>
+            </div>
+          </article>
+
+          <article class="news-card glass-card fade-in" data-category="nagradi" data-year="2026" style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:20px; overflow:hidden;">
+            <div style="height:180px; background:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600') center/cover;"></div>
+            <div style="padding:1.5rem;">
+              <div style="display:flex; gap:0.8rem; align-items:center; margin-bottom:0.8rem;">
+                <time style="color:#94a3b8; font-size:0.85rem;">28 февруари 2026</time>
+                <span style="background:rgba(34,197,94,0.15); color:#22c55e; padding:0.2rem 0.7rem; border-radius:50px; font-size:0.8rem; font-weight:600;">Награди</span>
+              </div>
+              <h3 style="font-size:1.1rem; margin-bottom:0.7rem; color:#f0f4ff;"><a href="detail.html" style="text-decoration:none; color:inherit;">Прво место на државното натпреварување по програмирање</a></h3>
+              <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:1rem; line-height:1.6;">ЕКТИА ученици освоија највисокото место во категоријата Напредно програмирање.</p>
+              <a href="detail.html" style="color:#3b82f6; text-decoration:none; font-weight:600; font-size:0.9rem;">Прочитај повеќе →</a>
+            </div>
+          </article>
+
+          <article class="news-card glass-card fade-in" data-category="proekti" data-year="2026" style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:20px; overflow:hidden;">
+            <div style="height:180px; background:url('https://images.unsplash.com/photo-1581092160607-798c0e9a6ae3?w=600') center/cover;"></div>
+            <div style="padding:1.5rem;">
+              <div style="display:flex; gap:0.8rem; align-items:center; margin-bottom:0.8rem;">
+                <time style="color:#94a3b8; font-size:0.85rem;">15 февруари 2026</time>
+                <span style="background:rgba(168,85,247,0.15); color:#a855f7; padding:0.2rem 0.7rem; border-radius:50px; font-size:0.8rem; font-weight:600;">Проекти</span>
+              </div>
+              <h3 style="font-size:1.1rem; margin-bottom:0.7rem; color:#f0f4ff;"><a href="detail.html" style="text-decoration:none; color:inherit;">Паметна оранжерија – завршен IoT проект</a></h3>
+              <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:1rem; line-height:1.6;">Автоматизирана оранжерија со сензори и мобилна контрола направена од наши ученици.</p>
+              <a href="detail.html" style="color:#3b82f6; text-decoration:none; font-weight:600; font-size:0.9rem;">Прочитај повеќе →</a>
+            </div>
+          </article>
+
+          <article class="news-card glass-card fade-in" data-category="uspexi" data-year="2026" style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:20px; overflow:hidden;">
+            <div style="height:180px; background:url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600') center/cover;"></div>
+            <div style="padding:1.5rem;">
+              <div style="display:flex; gap:0.8rem; align-items:center; margin-bottom:0.8rem;">
+                <time style="color:#94a3b8; font-size:0.85rem;">20 јануари 2026</time>
+                <span style="background:rgba(245,158,11,0.15); color:#f59e0b; padding:0.2rem 0.7rem; border-radius:50px; font-size:0.8rem; font-weight:600;">Успеси</span>
+              </div>
+              <h3 style="font-size:1.1rem; margin-bottom:0.7rem; color:#f0f4ff;"><a href="detail.html" style="text-decoration:none; color:inherit;">Ученик примен на Sorbonne Université во Париз</a></h3>
+              <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:1rem; line-height:1.6;">По завршувањето на билингвалната паралелка, нашиот ученик е примен на престижниот универзитет.</p>
+              <a href="detail.html" style="color:#3b82f6; text-decoration:none; font-weight:600; font-size:0.9rem;">Прочитај повеќе →</a>
+            </div>
+          </article>
+
+          <article class="news-card glass-card fade-in" data-category="nastani" data-year="2025" style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:20px; overflow:hidden;">
+            <div style="height:180px; background:url('https://images.unsplash.com/photo-1522202176988-66273c2b033f?w=600') center/cover;"></div>
+            <div style="padding:1.5rem;">
+              <div style="display:flex; gap:0.8rem; align-items:center; margin-bottom:0.8rem;">
+                <time style="color:#94a3b8; font-size:0.85rem;">Октомври 2025</time>
+                <span style="background:rgba(59,130,246,0.15); color:#3b82f6; padding:0.2rem 0.7rem; border-radius:50px; font-size:0.8rem; font-weight:600;">Настани</span>
+              </div>
+              <h3 style="font-size:1.1rem; margin-bottom:0.7rem; color:#f0f4ff;"><a href="detail.html" style="text-decoration:none; color:inherit;">Erasmus+ средба во Загреб</a></h3>
+              <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:1rem; line-height:1.6;">Наши ученици учествуваа на меѓународна конференција во Хрватска.</p>
+              <a href="detail.html" style="color:#3b82f6; text-decoration:none; font-weight:600; font-size:0.9rem;">Прочитај повеќе →</a>
+            </div>
+          </article>
+
+          <article class="news-card glass-card fade-in" data-category="nastani" data-year="2025" style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:20px; overflow:hidden;">
+            <div style="height:180px; background:url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600') center/cover;"></div>
+            <div style="padding:1.5rem;">
+              <div style="display:flex; gap:0.8rem; align-items:center; margin-bottom:0.8rem;">
+                <time style="color:#94a3b8; font-size:0.85rem;">Декември 2025</time>
+                <span style="background:rgba(59,130,246,0.15); color:#3b82f6; padding:0.2rem 0.7rem; border-radius:50px; font-size:0.8rem; font-weight:600;">Настани</span>
+              </div>
+              <h3 style="font-size:1.1rem; margin-bottom:0.7rem; color:#f0f4ff;"><a href="detail.html" style="text-decoration:none; color:inherit;">Новогодишна приредба и доделување пофалби</a></h3>
+              <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:1rem; line-height:1.6;">Свечена приредба со признанија за учениците со највисок успех.</p>
+              <a href="detail.html" style="color:#3b82f6; text-decoration:none; font-weight:600; font-size:0.9rem;">Прочитај повеќе →</a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="pagination-wrapper">
+          <span class="page-info">Страна 1 од 1</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>СОУ Св. Кирил и Методиј</h3>
+        <address>ул. „Индустриска" б.б.<br>1440 Неготино, Северна Македонија</address>
+        <p>Тел: +389 (0)43 361-079</p>
+      </div>
+      <div class="footer-column">
+        <h3>Брзи врски</h3>
+        <ul>
+          <li><a href="news.html">Најнови вести</a></li>
+          <li><a href="admissions.html">Услови за запишување</a></li>
+          <li><a href="directions.html">Смерови</a></li>
+          <li><a href="contact.html">Контакт</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright"><p>© 2026 СОУ Св. Кирил и Методиј. Сите права задржани.</p></div>
+
+  <div class="dev-credit">
+  Built with ❤️ by
+  <a href="https://www.instagram.com/davidosdas?igsh=eXR6am10MnJ0bDI1" target="_blank" rel="noopener noreferrer">
+    @DAVIDOSDAS
+  </a>
+  </div>
+  </footer>
+
+  <!-- AI Float Button -->
+  <div id="ai-float-btn" class="ai-float-btn breathing" title="DAVIDOSDAS AI">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2a8 8 0 0 1 8 8c0 5-8 12-8 12S4 15 4 10a8 8 0 0 1 8-8z"/>
+      <circle cx="12" cy="10" r="2.5" fill="white" stroke="none"/>
+    </svg>
+  </div>
+
+  <!-- AI Popup -->
+  <div id="ai-popup">
+    <div class="chat-header">
+      <div class="header-left">
+        <div class="status-dot"></div>
+        <span class="header-title">DAVIDOSDAS AI</span>
+      </div>
+      <button id="close-ai">✕</button>
+    </div>
+    <div id="answer-output">
+      <div class="ai-message welcome-msg">Системот е активен. Како можам да помогнам? 👋</div>
+    </div>
+    <div class="input-area">
+      <input id="question-input" type="text" placeholder="Прашај нешто за MASSUM..." autocomplete="off">
+      <button id="ask-button">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+    <!-- FAB: Community tools -->
+<div style="position:fixed; bottom:100px; right:28px; display:flex; flex-direction:column; align-items:flex-end; gap:10px; z-index:999;" id="fab-root">
+  <div id="fab-menu" style="display:flex; flex-direction:column; gap:8px; align-items:flex-end; opacity:0; transform:translateY(8px); transition:opacity 0.2s, transform 0.2s; pointer-events:none;">
+    <a href="../AI_School_Assistant/admin.html" style="display:inline-flex; align-items:center; gap:8px; background:white; border:1px solid var(--border); border-radius:var(--radius-pill); padding:9px 16px; font-size:13px; font-weight:600; color:var(--navy); text-decoration:none; box-shadow:var(--shadow-sm); white-space:nowrap;">
+      ⚙️ Admin panel
+    </a>
+    <a href="board.html" style="display:inline-flex; align-items:center; gap:8px; background:var(--accent); border-radius:var(--radius-pill); padding:9px 16px; font-size:13px; font-weight:600; color:white; text-decoration:none; box-shadow:var(--shadow-accent); white-space:nowrap;">
+      💬 Community board
+    </a>
+  </div>
+  <button onclick="(function(){var o=!window._fabOpen;window._fabOpen=o;var m=document.getElementById('fab-menu');var b=document.getElementById('fab-btn');m.style.opacity=o?'1':'0';m.style.transform=o?'translateY(0)':'translateY(8px)';m.style.pointerEvents=o?'all':'none';b.style.transform=o?'rotate(45deg)':'rotate(0)';b.style.background=o?'var(--accent-dark)':'var(--accent)';})()" id="fab-btn" style="width:50px; height:50px; border-radius:50%; background:var(--accent); border:none; cursor:pointer; font-size:22px; color:white; box-shadow:var(--shadow-accent); transition:transform 0.2s, background 0.2s; display:flex; align-items:center; justify-content:center;">+</button>
+</div>
+
+  <button class="back-to-top" aria-label="Назад на врв">↑</button>
+  <script src="static/js/script.js"></script>
+  <script src="static/js/ai_script.js"></script>
+  <script>
+    function filterNews() {
+      const cat = document.getElementById('filter-category').value;
+      const year = document.getElementById('filter-year').value;
+      document.querySelectorAll('#news-container .news-card').forEach(card => {
+        const matchCat = !cat || card.dataset.category === cat;
+        const matchYear = !year || card.dataset.year === year;
+        card.style.display = matchCat && matchYear ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

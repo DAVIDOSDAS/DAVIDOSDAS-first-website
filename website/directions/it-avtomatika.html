@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Компјутерска техника и автоматика – СОУ Св. Кирил и Методиј, Неготино.">
+  <title>Компјутерска техника и автоматика | СОУ Св. Кирил и Методиј</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/main.css">
+  <style>
+    :root { --primary-accent: #3b82f6; }
+    .direction-detail { background: var(--bg-dark, #0f172a); padding: 4rem 0; }
+    .photo-1 { grid-column: 1 / 3; aspect-ratio: 16 / 9; }
+    @media (max-width: 992px) {
+      .direction-container.grid { grid-template-columns: 1fr; }
+      .photo-1 { grid-column: 1; }
+    }
+    .direction-container.grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto auto;
+      gap: 1rem;
+    }
+    .photo-holder {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #1e293b;
+    }
+    .photo-holder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .photo-holder:hover img { transform: scale(1.05); }
+    .photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 60%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.2rem;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .photo-holder:hover .photo-overlay { opacity: 1; }
+    .photo-overlay h3 { color: #fff; font-size: 1rem; margin: 0 0 0.25rem; }
+    .photo-overlay p  { color: #cbd5e1; font-size: 0.85rem; margin: 0; }
+    .features-list { list-style: none; padding: 0; margin: 1.2rem 0; }
+    .features-list li {
+      padding: 0.9rem 1rem 0.9rem 2.8rem;
+      margin-bottom: 0.7rem;
+      background: rgba(255,255,255,0.03);
+      border-left: 3px solid #3b82f6;
+      border-radius: 0 10px 10px 0;
+      position: relative;
+      color: #cbd5e1;
+      transition: all 0.3s;
+    }
+    .features-list li::before {
+      content: "→";
+      position: absolute;
+      left: 1rem;
+      color: #3b82f6;
+      font-weight: 700;
+    }
+    .features-list li:hover {
+      background: rgba(255,255,255,0.06);
+      transform: translateX(6px);
+    }
+    .explanation-side h2 { color: #3b82f6; margin-bottom: 1rem; }
+    .explanation-side h3 { color: #e2e8f0; margin: 2rem 0 0.8rem; font-size: 1.1rem; }
+    .explanation-side p  { color: #94a3b8; line-height: 1.75; margin-bottom: 1rem; }
+    .btn-primary {
+      display: inline-block;
+      background: #3b82f6;
+      color: #fff;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-3px); }
+    .btn-secondary {
+      display: inline-block;
+      border: 2px solid #3b82f6;
+      color: #3b82f6;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .btn-secondary:hover { background: #3b82f6; color: #fff; }
+    
+  </style>
+</head>
+<body>
+
+  <div class="page-transition-shutter"></div>
+
+  <header class="navbar">
+    <div class="container navbar-container">
+      <div class="logo">
+        <a href="../index.html" class="logo-link">
+          <img src="../static/images/logo.jpg" alt="" width="50" height="50" loading="lazy">
+          <span>СОУ Св. Кирил и Методиј</span>
+        </a>
+      </div>
+      <button class="hamburger" type="button" aria-label="Отвори/затвори мени" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-menu" id="main-nav">
+        <ul class="nav-links">
+          <li><a href="../index.html">Почетна</a></li>
+          <li><a href="../about.html">За нас</a></li>
+          <li><a href="../directions.html">Смерови</a></li>
+          <li><a href="../admissions.html">Прием</a></li>
+          <li><a href="../news.html">Новости</a></li>
+          <li><a href="../contact.html">Контакт</a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch">
+        <a href="it-avtomatika.html" aria-current="true">МК</a>
+        <a href="../website_english/directions/it-avtomatika_en.html">EN</a>
+        <a href="../website_french/directions/it-avtomatika_fr.html">FR</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+<section class="page-hero">
+    <div class="container">
+        <div class="hero-content fade-in visible">
+            <div class="year">Стручно образование – сектор Електротехника и автоматика</div>
+            <h1>Автоматика</h1>
+            <p class="lead">
+                Програмирање на PLC, индустриска автоматизација, сензори, пневматика и хидравлика – подготвка за модерна индустрија 4.0 и автоматизирани производни линии.
+            </p>
+            <div class="hero-buttons">
+                <a href="../admissions.html#application" class="btn-primary">Аплицирај за насока Автоматика</a>
+                <a href="../directions.html" class="btn-secondary">Назад кон сите насоки</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="direction-detail">
+    <div class="container">
+        <div class="direction-container grid">
+            <!-- Left: Text explanation -->
+            <div class="explanation-side">
+                <h2>Што нуди насоката Автоматика?</h2>
+                <p>
+                    Оваа техничка насока обезбедува знаења и практични вештини за автоматско управување на производни процеси, програмирање на ПЛЦ (програмибилни логички контролери), работа со сензори, актуатори, пневматика и хидравлика. 
+                    Учениците се обучуваат за дизајн, монтажа и одржување на автоматизирани системи – идеално за индустрија, фабрики и компании со модерна автоматизација во Македонија.
+                </p>
+
+                <h3>Главни карактеристики</h3>
+                <ul class="features-list">
+                    <li>Програмирање на PLC (Siemens TIA Portal, Ladder, FBD, SCL)</li>
+                    <li>Работа со сензори, релеи, мотори, фреквентни конвертори и HMI панели</li>
+                    <li>Пневматика и хидравлика во автоматизирани системи</li>
+                    <li>Автоматизација на процеси: транспортни ленти, пакување, контрола на температура/притисок</li>
+                    <li>Практична настава во лаборатории со реална опрема + соработка со компании (ЕВН, индустриски фирми)</li>
+                    <li>Подготовка за занимања: техничар за автоматика, оператор PLC, одржувач на автоматизирани линии</li>
+                </ul>
+
+                <h3>Каде продолжуваме по завршување?</h3>
+                <p>
+                    Факултет за електротехника и информациски технологии (ФЕИТ-УКИМ), Техничко-металуршки факултет, 
+                    или директно вработување во компании како Johnson Matthey, Vitaminka (автоматизирани линии), АД ЕСМ, фабрики во Скопје/Куманово/Прилеп.
+                </p>
+
+                <a href="../admissions.html#application" class="btn-primary mt-8">
+                    Аплицирај за Автоматика →
+                </a>
+            </div>
+
+            <!-- Right: Photo grid -->
+            <div class="photo-grid">
+                <div class="photo-holder photo-1 glass-card">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200" 
+                         alt="PLC и автоматизациона опрема во лабораторија" loading="lazy">
+                    <div class="photo-overlay">
+                        <h3>PLC програмирање и контрола</h3>
+                        <p>Siemens и индустриски контролери</p>
+                    </div>
+                </div>
+
+                <div class="photo-holder photo-2 glass-card">
+                    <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=800" 
+                         alt="Лабораторија за автоматика со пневматика" loading="lazy">
+                    <div class="photo-overlay">
+                        <h3>Автоматика лабораторија</h3>
+                        <p>Сензори, актуатори и процеси</p>
+                    </div>
+                </div>
+
+                <div class="photo-holder photo-3 glass-card">
+                    <img src="https://images.unsplash.com/photo-1581092160560-1c1e428e9d65?w=800" 
+                         alt="Индустриска автоматизација – роботи и линии" loading="lazy">
+                    <div class="photo-overlay">
+                        <h3>Индустриска примена</h3>
+                        <p>Автоматизирани производни системи</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>СОУ Св. Кирил и Методиј</h3>
+        <address>ул. „Индустриска" б.б.<br>1440 Неготино, Северна Македонија</address>
+        <p>Тел: +389 (0)43 361-079</p>
+      </div>
+      <div class="footer-column">
+        <h3>Брзи врски</h3>
+        <ul>
+          <li><a href="../news.html">Најнови вести</a></li>
+          <li><a href="../admissions.html">Услови за запишување</a></li>
+          <li><a href="../directions.html">Смерови</a></li>
+          <li><a href="../contact.html">Контакт</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright"><p>© 2026 СОУ Св. Кирил и Методиј. Сите права задржани.</p></div>
+
+  <div class="dev-credit">
+  Built with ❤️ by
+  <a href="https://www.instagram.com/davidosdas?igsh=eXR6am10MnJ0bDI1" target="_blank" rel="noopener noreferrer">
+    @DAVIDOSDAS
+  </a>
+  </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Назад на врв">↑</button>
+  <script src="../static/js/script.js"></script>
+  <script src="../static/js/ai_script.js"></script>
+
+</body>
+</html>

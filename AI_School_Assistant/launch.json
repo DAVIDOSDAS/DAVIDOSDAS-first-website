@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run MASSUM Flask (Direct)",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/Main Folder/AI_School_Assistant/backend.py",
+      "cwd": "${workspaceFolder}/Main Folder/AI_School_Assistant",
+      "console": "integratedTerminal",
+      "args": ["run", "--port", "5000"],
+      "jinja": true,
+      "justMyCode": true,
+      "autoStartBrowser": false
+    }
+  ]
+}

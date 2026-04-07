@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Економија и трговија – СОУ Св. Кирил и Методиј, Неготино.">
+  <title>Економија и трговија | СОУ Св. Кирил и Методиј</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/main.css">
+  <style>
+    :root { --primary-accent: #10b981; }
+    .direction-detail { background: var(--bg-dark, #0f172a); padding: 4rem 0; }
+    .photo-1 { grid-column: 1 / 3; aspect-ratio: 16 / 9; }
+    @media (max-width: 992px) {
+      .direction-container.grid { grid-template-columns: 1fr; }
+      .photo-1 { grid-column: 1; }
+    }
+    .direction-container.grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto auto;
+      gap: 1rem;
+    }
+    .photo-holder {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #1e293b;
+    }
+    .photo-holder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .photo-holder:hover img { transform: scale(1.05); }
+    .photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 60%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.2rem;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .photo-holder:hover .photo-overlay { opacity: 1; }
+    .photo-overlay h3 { color: #fff; font-size: 1rem; margin: 0 0 0.25rem; }
+    .photo-overlay p  { color: #cbd5e1; font-size: 0.85rem; margin: 0; }
+    .features-list { list-style: none; padding: 0; margin: 1.2rem 0; }
+    .features-list li {
+      padding: 0.9rem 1rem 0.9rem 2.8rem;
+      margin-bottom: 0.7rem;
+      background: rgba(255,255,255,0.03);
+      border-left: 3px solid #10b981;
+      border-radius: 0 10px 10px 0;
+      position: relative;
+      color: #cbd5e1;
+      transition: all 0.3s;
+    }
+    .features-list li::before {
+      content: "→";
+      position: absolute;
+      left: 1rem;
+      color: #10b981;
+      font-weight: 700;
+    }
+    .features-list li:hover {
+      background: rgba(255,255,255,0.06);
+      transform: translateX(6px);
+    }
+    .explanation-side h2 { color: #10b981; margin-bottom: 1rem; }
+    .explanation-side h3 { color: #e2e8f0; margin: 2rem 0 0.8rem; font-size: 1.1rem; }
+    .explanation-side p  { color: #94a3b8; line-height: 1.75; margin-bottom: 1rem; }
+    .btn-primary {
+      display: inline-block;
+      background: #10b981;
+      color: #fff;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-3px); }
+    .btn-secondary {
+      display: inline-block;
+      border: 2px solid #10b981;
+      color: #10b981;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .btn-secondary:hover { background: #10b981; color: #fff; }
+    
+  </style>
+</head>
+<body>
+
+  <div class="page-transition-shutter"></div>
+
+  <header class="navbar">
+    <div class="container navbar-container">
+      <div class="logo">
+        <a href="../index.html" class="logo-link">
+          <img src="../static/images/logo.jpg" alt="" width="50" height="50" loading="lazy">
+          <span>СОУ Св. Кирил и Методиј</span>
+        </a>
+      </div>
+      <button class="hamburger" type="button" aria-label="Отвори/затвори мени" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-menu" id="main-nav">
+        <ul class="nav-links">
+          <li><a href="../index.html">Почетна</a></li>
+          <li><a href="../about.html">За нас</a></li>
+          <li><a href="../directions.html">Смерови</a></li>
+          <li><a href="../admissions.html">Прием</a></li>
+          <li><a href="../news.html">Новости</a></li>
+          <li><a href="../contact.html">Контакт</a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch">
+        <a href="ekonomija.html" aria-current="true">МК</a>
+        <a href="../website_english/directions/ekonomija_en.html">EN</a>
+        <a href="../website_french/directions/ekonomija_fr.html">FR</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+<section class="page-hero">
+  <div class="container">
+    <div class="hero-content fade-in visible">
+      <div class="year">Стручно образование</div>
+      <h1>Економија и трговија</h1>
+      <p class="lead">
+        Подготовка за светот на бизнисот, финансиите и современата трговија.
+      </p>
+      <div class="hero-buttons">
+        <a href="../admissions.html#application" class="btn-primary">Аплицирај за оваа насока</a>
+        <a href="../directions.html" class="btn-secondary">Назад кон сите смерови</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="direction-detail bg-fade">
+  <div class="container">
+    <div class="direction-container grid">
+      <!-- Left: Text explanation -->
+      <div class="explanation-side">
+        <h2>Што нуди оваа насока?</h2>
+        <p>
+          Оваа насока ги оспособува учениците за работа во економијата, трговијата, финансиите и бизнис менаџментот. 
+          Фокусот е на практично знаење, дигитални алатки и реални бизнис симулации.
+        </p>
+
+        <ul class="features-list">
+          <li>Сметководство и финансиски известувања</li>
+          <li>Маркетинг, дигитален маркетинг и e-commerce</li>
+          <li>Бизнис право и претприемништво</li>
+          <li>Управување со проекти и тимска работа</li>
+          <li>Економија во дигитална ера и стартап култура</li>
+          <li>Практична настава во реални компании (дуално образование можност)</li>
+        </ul>
+
+        <h3>Каде продолжуваме по завршување?</h3>
+        <p>
+          Факултети за економија, бизнис администрација, маркетинг, финансии, право, туризам.<br>
+          Директно вработување во банки, трговски компании, маркетинг агенции, стартапи.
+        </p>
+
+        <a href="../admissions.html#application" class="btn-primary" style="margin-top: 2rem;">
+          Аплицирај за економија и трговија →
+        </a>
+      </div>
+
+      <!-- Right: Photo grid -->
+      <div class="photo-grid">
+        <div class="photo-holder photo-1 glass-card">
+          <img 
+            src="https://images.unsplash.com/photo-1554224155-6726b3ff335f?w=800" 
+            alt="Ученици на час по економија" 
+            loading="lazy">
+          <div class="photo-overlay">
+            <h3>Час по економија</h3>
+            <p>Анализа на реални бизнис случаи</p>
+          </div>
+        </div>
+
+        <div class="photo-holder photo-2 glass-card">
+          <img 
+            src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800" 
+            alt="Презентација на бизнис план" 
+            loading="lazy">
+          <div class="photo-overlay">
+            <h3>Презентација на бизнис план</h3>
+            <p>Ученици пред комисија</p>
+          </div>
+        </div>
+
+        <div class="photo-holder photo-3 glass-card">
+          <img 
+            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800" 
+            alt="Практична настава во компанија" 
+            loading="lazy">
+          <div class="photo-overlay">
+            <h3>Практика во компанија</h3>
+            <p>Дуално образование во акција</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>СОУ Св. Кирил и Методиј</h3>
+        <address>ул. „Индустриска" б.б.<br>1440 Неготино, Северна Македонија</address>
+        <p>Тел: +389 (0)43 361-079</p>
+      </div>
+      <div class="footer-column">
+        <h3>Брзи врски</h3>
+        <ul>
+          <li><a href="../news.html">Најнови вести</a></li>
+          <li><a href="../admissions.html">Услови за запишување</a></li>
+          <li><a href="../directions.html">Смерови</a></li>
+          <li><a href="../contact.html">Контакт</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright"><p>© 2026 СОУ Св. Кирил и Методиј. Сите права задржани.</p></div>
+
+  <div class="dev-credit">
+  Built with ❤️ by
+  <a href="https://www.instagram.com/davidosdas?igsh=eXR6am10MnJ0bDI1" target="_blank" rel="noopener noreferrer">
+    @DAVIDOSDAS
+  </a>
+  </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Назад на врв">↑</button>
+  <script src="../static/js/script.js"></script>
+  <script src="../static/js/ai_script.js"></script>
+
+</body>
+</html>

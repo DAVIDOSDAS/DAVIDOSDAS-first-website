@@ -1,0 +1,249 @@
+{
+  "почетна страна": "Добредојдовте во нашата образовна заедница каде што знаењето се преточува во успех.",
+  "за нас": "Ние сме водечка образовна институција посветена на создавање на идни лидери и иноватори преку модерна настава.",
+  "контакт": "Контактирајте нè за сите прашања преку е-пошта, телефон или посетете нè директно во нашите простории.",
+  "пријавување": "Станете дел од нашата приказна. Дознајте сè за условите, потребните документи и роковите за запишување.",
+  "локациски информации": "Лоцирани сме во срцето на градот, со одлична поврзаност и пристапност за сите ученици.",
+  "економија": "Насоката Економија, право и трговија ги подготвува учениците за динамичниот свет на финансиите, маркетингот и менаџментот преку сметководство и деловно право.",
+  "електротехничар-енергетичар": "Електротехничар-енергетичар е насока наменета за оние кои сакаат да ја совладаат иднината на обновливите извори и електричните системи.",
+  "компјутерска техника и автоматика": "Компјутерска техника и автоматика нуди современи вештини во програмирање, роботика и паметни системи за дигиталната ера.",
+  "природно-математичкото подрачје": "Природно-математичкото подрачје е темел за понатамошни студии во ИТ, медицина, архитектура и инженерство.",
+  "општествено-хуманистичкото подрачје": "Општествено-хуманистичкото подрачје ги развива критичкото размислување, комуникациските вештини и познавањето на правото и психологијата.",
+  "билингвална": "Уникатна можност за совладување на наставната програма на македонски и француски јазик, отворајќи врати кон европското образование.",
+  "Хемиски лабораториски техничар": "Хемиско-технолошка насока каде преку лабораториски истражувања и експерименти се откриваат тајните на современата наука.",
+  "Прехранбен техничар": "Насоката Храна и исхрана ги едуцира учениците за контрола на квалитет, технологија на производство и здрави навики.",
+  "Трговија и маркетинг": "Трговија и маркетинг е идеално место за креативни умови кои сакаат да ги совладаат вештините за продажба и бренд менаџмент.",
+  "Дуално образование": "Дуалното образование овозможува паралелно учење и практична работа во водечки компании во секторот за компјутерска техника.",
+  "Вести": "Бидете во тек со нашите најнови достигнувања, од отворањето на нови лаборатории за роботика до првите места на државни натпревари.",
+  "Настаните": "Не пропуштајте ги нашите настани: Денот на отворени врати на 10-ти април и големиот Научен саем на 22-ри април.",
+  "Ерасмус+": "Проширете ги вашите хоризонти со Erasmus+ програмите за меѓународна размена и искуство во најдобрите училишта низ Европа.",
+  "Галерија": "Погледнете ја нашата галерија – од спортски победи до секојдневните активности во современите лаборатории.",
+  "Наставен кадар": "Нашиот наставен кадар е составен од над 50 мотивирани професори со богато академско и практично искуство.",
+  "Детали": "Дознајте повеќе детали за наставниот план и можностите за кариера во оваа област.",
+  "Предмети": "Преглед на сите наставни предмети и воннаставни активности достапни за учениците.",
+  "Повеќе вести": "Прочитајте ги сите архивирани вести и успешни приказни на нашите алумни.",
+  "Настава": "Наставата се реализира во инспиративна средина со акцент на практичната примена на знаењето преку современи проекти.",
+  "Упис/конкурс": "Конкурсот за новата учебна година е објавен! Аплицирајте онлајн и започнете го вашето патување кај нас во мај.",
+  "Контакт информации": "Телефон: +389 2 123 4567 | Е-пошта: info@school.edu.mk",
+  "Адреса": "ул. Илинденска 123, Скопје, Македонија",
+  "Социјални медиуми": "Следете нè на Facebook, Instagram и LinkedIn за најнови информации и настани.",
+  "Авторски права": "© 2024 Сите права се задржани. Средно училиште за информатика и компјутерски науки - Скопје",
+  "Политика за приватност": "Прочитајте ја нашата политика за приватност за да дознаете како ги заштитуваме вашите податоци.",
+  "Услови за користење": "Прочитајте ги нашите услови за користење пред да пристапите до нашата веб-страница и услуги.",
+  "Часови": "Нашите часови се одржуваат од понеделник до петок, од 7:30 до 13:30 часот.",
+  "услуги_за_ученици": {
+    "оценки": "Брз и едноставен пристап до официјалниот Е-Дневник за увид во оценките, изостаноците и повратните информации од наставниците во реално време.",
+    "распоред": "Секогаш ажуриран распоред на часови за сите паралелки и смени, вклучувајќи ги и термините за дополнителна и засилена настава.",
+    "матура": "Комплетни информации за државната матура: од пријавување на испитите и избор на предмети, до корисни материјали за подготовка и објава на резултатите."
+  },
+  "воннаставни_активности": {
+    "клубови": "Откријте ги нашите креативни секции и клубови каде учениците можат да ги развиваат своите таленти во програмирање, дебатирање, уметност и наука.",
+    "спорт": "Бидете дел од нашите спортски тимови и учествувајте во меѓуучилишни натпревари по фудбал, кошарка и одбојка, негувајќи го тимскиот дух и здравиот живот."
+  },
+  "вести": {
+    "настани": "Бидете во тек со сите актуелни настани во училиштето, од хуманитарни акции и приредби до гостувања на предавачи од различни индустрии.",
+    "награди": "Простор посветен на признанијата и наградите освоени од нашите талентирани ученици на регионални, државни и меѓународни натпревари.",
+    "проекти": "Преглед на сите тековни и завршени проекти поддржани од училиштето, каде учениците работат на иновативни решенија и реални проблеми.",
+    "достигнувања": "Славиме за успесите на нашите ученици и професори кои преку својот труд и посветеност го подигнуваат реномето на СОУ „Св. Кирил и Методиј“."
+  },
+  "упис": {
+    "аплицирај_сега": "Започнете ја вашата апликација за упис онлајн преку едноставен процес кој ќе ве води чекор по чекор до станување дел од нашата заедница.",
+    "уписен_конкурс": "Детален преглед на официјалниот конкурс за запишување, вклучувајќи ги критериумите за бодување, потребните документи и клучните датуми."
+  },
+  "администрација": {
+    "преземања": "Дигитална библиотека на сите потребни обрасци, барања и формулари кои родителите и учениците можат да ги преземат и пополнат дома.",
+    "правилници": "Официјални документи кои ги уредуваат правилата на однесување, организацијата на наставата и статутот на нашата образовна институција.",
+    "обрасци_за_пријавување": "Специфични пријави за запишување, испити или промена на насока, достапни за преземање во секое време за ваша поголема удобност."
+  },
+  "футер_додатоци": {
+    "чпп": "Одговори на најчесто поставуваните прашања во врска со наставата, уписите, оценките и секојдневниот живот во училиштето.",
+    "поддршка": "Техничка помош за корисниците на порталот – контактирајте го нашиот ИТ тим доколку имате проблем со најава или пристап до материјалите.",
+    "мапа_на_сајтот": "Целосна мапа на веб-страницата за полесна навигација и брзо наоѓање на сите информации што ви се потребни на едно место."
+  },
+  "академски_ресурси": {
+    "дигитални_материјали": "Пристапете до нашата богата архива на дигитални наставни материјали, презентации и скрипти кои ќе ви помогнат во совладување на секојдневните лекции и подготовка за вежби.",
+    "онлајн_платформи": "Користете ги најсовремените платформи за учење на далечина како Microsoft Teams и Office 365, овозможувајќи непречена комуникација помеѓу учениците и наставниот кадар.",
+    "подготовка_за_матура": "Специјализирана секција со претходни испитни задачи, насоки и материјали за подготовка на државната матура, со цел постигнување на највисоки резултати при уписот на факултет.",
+    "проектни_задачи": "Детални упатства, рокови и предлог-теми за изработка на вашите проектни задачи, каде знаењето се применува преку практично истражување и креативност."
+  },
+  "соработка": {
+    "партнерски_компании": "Горди сме на нашата соработка со водечките компании во ИТ, енергетскиот и економскиот сектор, кои обезбедуваат менторство и техничка поддршка за нашите ученици.",
+    "пракса": "Преку програмата за феријална пракса, нашите ученици добиваат реално работно искуство во професионални средини, градејќи ги своите вештини уште пред завршување на средното образование.",
+    "стипендии": "Бидете информирани за сите тековни конкурси за стипендии за талентирани ученици и социјални стипендии, како и за можностите за финансиска поддршка од нашите партнери."
+  },
+  "центар_за_безбедност": {
+    "сајбер_безбедност": "Едукација и ресурси за безбедно користење на интернетот, заштита на личните податоци и препознавање на дигиталните закани во денешниот модерен свет.",
+    "пријавување": "Безбедна и доверлива платформа каде секој ученик може да пријави врсничко насилство или несоодветно однесување, гарантирајќи брза реакција и заштита на секоја индивидуа.",
+    "етички_кодекс": "Училишниот етички кодекс ги дефинира стандардите на однесување и меѓусебно почитување кои се темел на нашата здрава и инспиративна образовна заедница."
+  },
+  "статистика": {
+    "традиција": "Со децении постоење, нашето училиште претставува столб на образованието во регионот, комбинирајќи го долгогодишното искуство со најновите образовни трендови.",
+    "ученици": "Дом на стотици млади умови кои секојдневно соработуваат, се натпреваруваат и заедно растат во идни професионалци во своите области.",
+    "кадар": "Тимот од висококвалификувани наставници и стручни соработници е посветен на индивидуалниот успех на секој ученик преку менторство и постојана поддршка.",
+    "успех": "Високиот процент на успешно положени матурски испити и запишани факултети е вистински доказ за квалитетот на наставата и трудот на нашите ученици."
+  },
+  "центар_за_ученици": {
+    "кариера": "Професионално насочување и совети за избор на идната кариера преку тестови за интереси, работилници и средби со успешни професионалци од индустријата.",
+    "библиотека": "Библиотеката нуди мирен простор за учење со пристап до широка лепеза на лектири, стручна литература и технички списанија за сечиј интерес.",
+    "организации": "Вклучете се во нашите ученички организации каде можете да ги развивате лидерските вештини и да реализирате сопствени идеи преку проекти и активизам."
+  },
+  "home_page": "Welcome to our educational community where knowledge translates into success.",
+  "about_us": "We are a leading educational institution dedicated to creating future leaders and innovators through modern teaching.",
+  "contact": "Contact us for any questions via email, phone, or visit us directly at our premises.",
+  "enrollment": "Become part of our story. Find out everything about the conditions, required documents, and enrollment deadlines.",
+  "location_information": "We are located in the heart of the city, with excellent connectivity and accessibility for all students.",
+  "economics": "The Economics, Law, and Trade stream prepares students for the dynamic world of finance, marketing, and management through accounting and business law.",
+  "electrical_technician_energy": "Electrical Technician-Energy is a stream intended for those who want to master the future of renewable sources and electrical systems.",
+  "computer_technics_and_automation": "Computer Technics and Automation offers modern skills in programming, robotics, and smart systems for the digital era.",
+  "natural_sciences_and_mathematics": "The Natural Sciences and Mathematics department is the foundation for further studies in IT, medicine, architecture, and engineering.",
+  "social_sciences_and_humanities": "The Social Sciences and Humanities department develops critical thinking, communication skills, and knowledge of law and psychology.",
+  "bilingual": "A unique opportunity to master the curriculum in Macedonian and French, opening doors to European education.",
+  "chemical_laboratory_technician": "A chemical-technological stream where the secrets of modern science are discovered through laboratory research and experiments.",
+  "food_technician": "The Food and Nutrition stream educates students on quality control, production technology, and healthy habits.",
+  "trade_and_marketing": "Trade and Marketing is an ideal place for creative minds who want to master sales and brand management skills.",
+  "dual_education": "Dual education enables parallel learning and practical work in leading companies within the computer technology sector.",
+  "news_main": "Stay up to date with our latest achievements, from the opening of new robotics labs to first-place finishes in national competitions.",
+  "events_main": "Don't miss our events: Open Day on April 10th and the grand Science Fair on April 22nd.",
+  "Erasmus+": "Expand your horizons with Erasmus+ international exchange programs and experience in the best schools across Europe.",
+  "gallery": "View our gallery – from sports victories to everyday activities in modern laboratories.",
+  "teaching_staff": "Our teaching staff consists of over 50 motivated professors with rich academic and practical experience.",
+  "details": "Find out more details about the curriculum and career opportunities in this field.",
+  "subjects": "An overview of all academic subjects and extracurricular activities available to students.",
+  "more_news": "Read all archived news and success stories of our alumni.",
+  "instruction": "Teaching is carried out in an inspiring environment with an emphasis on the practical application of knowledge through modern projects.",
+  "enrollment_competition": "The competition for the new school year has been announced! Apply online and start your journey with us in May.",
+  "contact_info": "Phone: +389 2 123 4567 | Email: info@school.edu.mk",
+  "address": "123 Ilindenska St., Skopje, Macedonia",
+  "social_media": "Follow us on Facebook, Instagram, and LinkedIn for the latest information and events.",
+  "copyright": "© 2024 All rights reserved. High School for Informatics and Computer Science - Skopje",
+  "privacy_policy": "Read our privacy policy to learn how we protect your data.",
+  "terms_of_use": "Read our terms of use before accessing our website and services.",
+  "hours": "Our classes are held from Monday to Friday, from 7:30 AM to 1:30 PM.",
+  "student_services": {
+    "grades": "Quick and easy access to the official E-Diary for insight into grades, absences, and real-time feedback from teachers.",
+    "schedule": "An always up-to-date class schedule for all classes and shifts, including terms for additional and reinforced instruction.",
+    "matura": "Complete information for the State Matura: from exam registration and subject selection to useful preparation materials and results publication."
+  },
+  "extracurricular_activities": {
+    "clubs": "Discover our creative sections and clubs where students can develop their talents in programming, debating, art, and science.",
+    "sports": "Be part of our sports teams and participate in inter-school competitions in football, basketball, and volleyball, nurturing team spirit and a healthy lifestyle."
+  },
+  "news": {
+    "events": "Stay up to date with all current events in the school, from humanitarian actions and performances to guest lectures from various industries.",
+    "awards": "A space dedicated to the recognitions and awards won by our talented students in regional, national, and international competitions.",
+    "projects": "An overview of all ongoing and completed projects supported by the school, where students work on innovative solutions and real-world problems.",
+    "achievements": "Celebrating the successes of our students and professors who, through their hard work and dedication, raise the reputation of PSST 'St. Cyril and Methodius'."
+  },
+  "admission": {
+    "apply_now": "Start your enrollment application online through a simple process that will lead you step-by-step toward becoming part of our community.",
+    "admission_competition": "A detailed overview of the official enrollment competition, including scoring criteria, required documents, and key dates."
+  },
+  "administration": {
+    "downloads": "A digital library of all necessary forms, requests, and documents that parents and students can download and fill out at home.",
+    "regulations": "Official documents governing the rules of conduct, the organization of teaching, and the statute of our educational institution.",
+    "application_forms": "Specific applications for enrollment, exams, or change of department, available for download at any time for your convenience."
+  },
+  "footer_extras": {
+    "faq": "Answers to the most frequently asked questions regarding teaching, enrollment, grades, and daily school life.",
+    "support": "Technical assistance for portal users – contact our IT team if you have an issue with login or accessing materials.",
+    "sitemap": "A complete map of the website for easier navigation and quickly finding all the information you need in one place."
+  },
+  "academic_resources": {
+    "digital_materials": "Access our rich archive of digital teaching materials, presentations, and scripts that will help you master daily lessons and prepare for exercises.",
+    "online_platforms": "Use the latest distance learning platforms like Microsoft Teams and Office 365, enabling seamless communication between students and teaching staff.",
+    "matura_prep": "A specialized section with previous exam tasks, guidelines, and materials for state matura preparation, aiming for the highest results during university enrollment.",
+    "project_tasks": "Detailed instructions, deadlines, and suggested topics for your project tasks, where knowledge is applied through practical research and creativity."
+  },
+  "collaboration": {
+    "partner_companies": "We are proud of our collaboration with leading companies in the IT, energy, and economic sectors, which provide mentorship and technical support for our students.",
+    "internship": "Through the summer internship program, our students gain real-world work experience in professional environments, building their skills before finishing high school.",
+    "scholarships": "Stay informed about all current scholarship competitions for talented students and social scholarships, as well as opportunities for financial support from our partners."
+  },
+  "safety_center": {
+    "cyber_safety": "Education and resources for safe internet use, personal data protection, and recognizing digital threats in today's modern world.",
+    "reporting": "A safe and confidential platform where every student can report peer violence or inappropriate behavior, guaranteeing a quick reaction and protection for every individual.",
+    "ethics_code": "The school code of ethics defines the standards of behavior and mutual respect that are the foundation of our healthy and inspiring educational community."
+  },
+  "statistics": {
+    "tradition": "With decades of existence, our school represents a pillar of education in the region, combining long-standing experience with the latest educational trends.",
+    "students": "Home to hundreds of young minds who collaborate, compete, and grow together into future professionals in their fields.",
+    "staff": "A team of highly qualified teachers and expert associates is dedicated to the individual success of each student through mentorship and constant support.",
+    "success": "The high percentage of successfully passed matura exams and enrolled universities is true proof of the quality of teaching and the effort of our students."
+  },
+  "student_center": {
+    "career": "Professional orientation and advice for choosing a future career through interest tests, workshops, and meetings with successful professionals from the industry.",
+    "library": "The library offers a peaceful space for study with access to a wide range of required reading, professional literature, and technical magazines for every interest.",
+    "organizations": "Get involved in our student organizations where you can develop leadership skills and realize your own ideas through projects and activism."
+  },
+  "accueil": "Bienvenue dans notre communauté éducative où le savoir se transforme en succès.",
+  "a_propos": "Nous sommes une institution éducative de premier plan dédiée à former les futurs leaders et innovateurs grâce à un enseignement moderne.",
+  "inscription": "Faites partie de notre histoire. Découvrez tout sur les conditions, les documents requis et les dates limites d'inscription.",
+  "informations_localisation": "Nous sommes situés au cœur de la ville, avec une excellente connectivité et accessibilité pour tous les élèves.",
+  "economie": "La filière Économie, Droit et Commerce prépare les élèves au monde dynamique de la finance, du marketing et de la gestion à travers la comptabilité et le droit des affaires.",
+  "electrotechnicien_energie": "Électrotechnicien-Énergie est une filière destinée à ceux qui veulent maîtriser l'avenir des sources renouvelables et des systèmes électriques.",
+  "informatique_et_automatique": "Technique Informatique et Automatique offre des compétences modernes en programmation, robotique et systèmes intelligents pour l'ère numérique.",
+  "sciences_naturelles_et_mathematiques": "Le département Sciences Naturelles et Mathématiques est le fondement des études supérieures en informatique, médecine, architecture et ingénierie.",
+  "sciences_sociales_et_humanites": "Le département Sciences Sociales et Humanités développe l'esprit critique, les compétences en communication et les connaissances en droit et psychologie.",
+  "bilingue": "Une opportunité unique de maîtriser le programme en macédonien et en français, ouvrant les portes de l'éducation européenne.",
+  "technicien_laboratoire_chimique": "Une filière chimico-technologique où les secrets de la science moderne sont découverts par la recherche et l'expérimentation en laboratoire.",
+  "technicien_alimentaire": "La filière Alimentation et Nutrition éduque les élèves sur le contrôle qualité, la technologie de production et les habitudes saines.",
+  "commerce_et_marketing": "Commerce et Marketing est le lieu idéal pour les esprits créatifs souhaitant maîtriser la vente et la gestion de marque.",
+  "education_duale": "L'éducation duale permet un apprentissage parallèle et un travail pratique dans des entreprises leaders du secteur informatique.",
+  "actualites_principales": "Restez informés de nos dernières réussites, de l'ouverture de nouveaux laboratoires de robotique aux premières places des concours nationaux.",
+  "evenements_principaux": "Ne manquez pas nos événements : Journée Portes Ouvertes le 10 avril et le grand Salon des Sciences le 22 avril.",
+  "galerie": "Consultez notre galerie – des victoires sportives aux activités quotidiennes dans nos laboratoires modernes.",
+  "corps_enseignant": "Notre équipe pédagogique est composée de plus de 50 professeurs motivés possédant une riche expérience académique et pratique.",
+  "matieres": "Un aperçu de toutes les matières académiques et des activités parascolaires proposées aux élèves.",
+  "plus_d_actualites": "Consultez toutes les archives et les témoignages de réussite de nos anciens élèves.",
+  "enseignement": "L'enseignement est dispensé dans un environnement inspirant, mettant l'accent sur l'application pratique des connaissances via des projets modernes.",
+  "concours_inscription": "Le concours pour la nouvelle année scolaire est annoncé ! Postulez en ligne et commencez votre voyage avec nous en mai.",
+  "infos_contact": "Tél : +389 2 123 4567 | E-mail : info@school.edu.mk",
+  "adresse": "123 rue Ilindenska, Skopje, Macédoine",
+  "reseaux_sociaux": "Suivez-nous sur Facebook, Instagram et LinkedIn pour les dernières infos et événements.",
+  "droits_auteur": "© 2024 Tous droits réservés. Lycée d'Informatique et des Sciences Numériques - Skopje",
+  "politique_confidentialite": "Lisez notre politique de confidentialité pour savoir comment nous protégeons vos données.",
+  "conditions_utilisation": "Lisez nos conditions d'utilisation avant d'accéder à notre site web et à nos services.",
+  "horaires": "Nos cours ont lieu du lundi au vendredi, de 7h30 à 13h30.",
+  "services_aux_eleves": {
+    "notes": "Accès rapide et facile au cahier de textes numérique officiel pour consulter les notes, les absences et les retours des professeurs en temps réel.",
+    "emploi_du_temps": "Un emploi du temps toujours à jour pour toutes les classes, incluant les sessions de soutien et de renforcement.",
+    "baccalaureat": "Informations complètes sur le Baccalauréat d'État : de l'inscription aux examens au choix des matières, en passant par les supports de révision."
+  },
+  "activites_parascolaires": {
+    "clubs": "Découvrez nos sections créatives et nos clubs où les élèves peuvent développer leurs talents en programmation, débat, art et science.",
+    "sports": "Faites partie de nos équipes sportives et participez aux compétitions inter-scolaires de football, basket-ball et volley-ball."
+  },
+  "nouvelles": {
+    "evenements": "Restez au courant de tous les événements de l'école, des actions humanitaires aux conférences d'experts du secteur.",
+    "recompenses": "Un espace dédié aux distinctions et prix remportés par nos élèves talentueux lors de concours régionaux et internationaux.",
+    "projets": "Un aperçu de tous les projets en cours soutenus par l'école, où les élèves travaillent sur des solutions innovantes.",
+    "reussites": "Nous célébrons les succès de nos élèves et professeurs qui font la renommée du Lycée 'St. Cyrille et Méthode'."
+  },
+  "extras_footer": {
+    "faq": "Réponses aux questions les plus fréquentes concernant les cours, l'inscription et la vie scolaire quotidienne.",
+    "support": "Assistance technique pour les utilisateurs du portail – contactez notre équipe informatique en cas de problème de connexion.",
+    "plan_du_site": "Une carte complète du site web pour une navigation facilitée."
+  },
+  "ressources_academiques": {
+    "supports_numeriques": "Accédez à nos archives de supports pédagogiques numériques, présentations et scripts pour vous aider dans vos cours quotidiens.",
+    "plateformes_en_ligne": "Utilisez les dernières plateformes d'apprentissage à distance comme Microsoft Teams et Office 365.",
+    "prep_bac": "Section spécialisée avec annales, conseils et supports pour la préparation du baccalauréat d'État.",
+    "projets_tuteures": "Instructions détaillées et sujets suggérés pour vos projets de recherche et de création."
+  },
+  "centre_de_securite": {
+    "cybersecurite": "Éducation et ressources pour une utilisation sûre d'Internet et la protection des données personnelles.",
+    "signalement": "Une plateforme sécurisée et confidentielle pour signaler tout comportement inapproprié, garantissant une protection rapide.",
+    "code_ethique": "Le code d'éthique définit les standards de comportement et de respect mutuel au sein de notre communauté."
+  },
+  "statistiques": {
+    "tradition": "Avec des décennies d'existence, notre école combine expérience historique et tendances éducatives modernes.",
+    "eleves": "Foyer de centaines de jeunes esprits qui collaborent et grandissent ensemble pour devenir les professionnels de demain.",
+    "personnel": "Une équipe de professeurs hautement qualifiés dédiés à la réussite individuelle de chaque élève par le mentorat.",
+    "succes": "Le fort taux de réussite au baccalauréat et aux admissions universitaires témoigne de la qualité de notre enseignement."
+  },
+  "centre_eleves": {
+    "carriere": "Orientation professionnelle et conseils pour choisir son futur métier via des tests d'intérêts et des ateliers.",
+    "bibliotheque": "La bibliothèque offre un espace calme avec un accès à une large gamme de littérature classique et technique.",
+    "organisations": "Impliquez-vous dans nos organisations lycéennes pour développer vos compétences en leadership."
+  }
+}
