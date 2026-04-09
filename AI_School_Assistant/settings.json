@@ -1,6 +1,0 @@
-{
-  "files.associations": {
-    "*.launch.json": "jsonc",
-    "launch.json": "jsonc"
-  }
-}
